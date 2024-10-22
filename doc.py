@@ -10,7 +10,7 @@ def save_file_contents(folder_path):
             try:
                 with open(file_path, 'r', encoding='utf-8') as file_content:
                     # نوشتن عنوان فایل همراه با مسیر نسبی
-                    file_contents.append(f'\n#.$.$.$.#{relative_path}\n')
+                    file_contents.append(f'\n#####{relative_path}\n')
                     file_contents.append(file_content.read() + "\n")
             except Exception as e:
                 # در صورت بروز خطا در خواندن فایل

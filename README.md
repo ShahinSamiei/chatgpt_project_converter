@@ -1,18 +1,13 @@
-
 <!---------------------------------------[Description]-->
 ## Description
-    This is a example of python with fastapi for API
-
-
+    This project provides a set of Python scripts to work with directory structures and file contents. It allows you to save the structure of a directory tree, the contents of files, and also recreate a project from a text file representation. These tools are useful for documenting projects, backing up file structures, or rebuilding projects from textual representations.
 
 <!---------------------------------------[Install]-->
 <br><br>
 
 ## Source 
-    git clone git@github.com:kashanimorteza/example_python_fastapi.git
-    cd ./example_python_fastapi
-
-
+    git clone git@github.com:yourusername/yourproject.git
+    cd ./yourproject
 
 <!---------------------------------------[Python]-->
 <br><br>
@@ -20,58 +15,57 @@
 ## Python
 
 #### Install
-    add-apt-repository ppa:deadsnakes/ppa
-	apt update -y
-	apt install python3 -y
-	apt install python3-pip -y
-	apt install python3-venv -y
+    apt update -y
+    apt install python3 -y
+    apt install python3-pip -y
+    apt install python3-venv -y
 
 #### Virtual environment 
-	python3 -m venv .myenv3
-	.myenv3/bin/python3 -m pip install --upgrade pip
-	source .myenv3/bin/activate
-	pip install -r requirements.txt
+    python3 -m venv .venv
+    .venv/bin/python3 -m pip install --upgrade pip
+    source .venv/bin/activate
+    pip install -r requirements.txt
 
+<!---------------------------------------[Files]-->
 
-
-<!---------------------------------------[WebApi]-->
 <br><br>
 
-## WebApi
+## Files
 
-#### Run simple
-	fastapi run ./api.py
+### doc.py
+    This script reads all files in a specified folder, retrieves their contents, and saves it into a single text file. It documents each file including its relative path and handles errors encountered during file reading.
 
-#### Run With uvicorn (HTTP)
-    uvicorn api:app --host 127.0.0.1 --port 8000
+### main.py
+    This script saves both the directory structure and the contents of the files within a directory, combining both into a single output file.
 
-#### Run With uvicorn (HTTPS)
-	Create SSl
-	----------------
-	openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -nodes
-    
-	Run
-	----------------
-	uvicorn webapi.api:app --host 127.0.0.1 --port 8000 --ssl-keyfile=webapi/key.pem --ssl-certfile=webapi/cert.pem
+### project.py
+    This script recreates a project’s folder and file structure from a text file representation of the directory and its contents.
 
-#### Run With Nginx (HTTP)
-	...
+### tree.py
+    This script focuses on saving the directory structure in a tree format, without file contents.
 
-#### Run With Nginx (HTTPS)
-	...
+<!---------------------------------------[Usage]-->
+<br><br>
 
-#### Chrome
-	http://127.0.0.1:8000
+## Usage
 
-#### Doc
-	http://127.0.0.1:8000/docs
+### Document a Project:
+    python main.py
+    # Input the folder path when prompted and save the structure and contents in one file.
+
+### Recreate a Project:
+    python project.py
+    # Input the path to the saved text file and the directory where the project should be recreated.
+
+### Save Only Directory Structure:
+    python tree.py
+    # Input the folder path and save the directory structure in a text file.
 
 <!---------------------------------------[Structure]-->
 <br><br>
 
 ## Structure
-	Api
-	Route
-	Logic
-	Lib
-	Model
+    doc.py
+    main.py
+    project.py
+    tree.py

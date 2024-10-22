@@ -8,7 +8,7 @@ def recreate_project_from_txt(txt_file, base_path):
     file_content = []
     
     for line in lines:
-        if line.startswith("#.$.$.$.#"):
+        if line.startswith("#####"):
             # اگر فایل قبلی وجود دارد آن را ذخیره کنیم
             if file_path:
                 write_file(file_path, file_content)
